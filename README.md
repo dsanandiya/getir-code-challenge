@@ -41,7 +41,7 @@ Provide name of Account to be created.
 
 **Condition** : If everything is OK.
 
-**Code** : `202`
+**Code** : `200`
 
 **Content example**
 
