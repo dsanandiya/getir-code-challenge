@@ -78,7 +78,7 @@ Install NPM dependencies:
 $ npm install
 ```
 
-Run run it on local environment
+Run it on local environment:
 
 ```
 $ npm start
