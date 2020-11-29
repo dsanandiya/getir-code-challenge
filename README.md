@@ -72,6 +72,7 @@ Provide name of Account to be created.
     "message": "\"maxCount\" must be a number"
 }
 ```
+## Project Setup
 
 Install NPM dependencies:
 
