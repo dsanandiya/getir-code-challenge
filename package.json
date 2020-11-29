@@ -1,0 +1,61 @@
+{
+  "name": "getir-code-challenge",
+  "version": "1.0.0",
+  "description": "Getir - Tech Challenge",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --coverage --runInBand"
+  },
+  "engines": {
+    "node": ">=12.18.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "es6": true,
+      "jest/globals": true,
+      "node": true
+    },
+    "plugins": [
+      "jest",
+      "prettier"
+    ],
+    "extends": [
+      "plugin:prettier/recommended",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2018
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/*",
+    "coverage/*",
+    "docs/*"
+  ],
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bluebird": "^3.5.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validation": "^3.0.5",
+    "mongoose": "^5.9.16",
+    "supertest": "^6.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.5.0",
+    "prettier-eslint": "^8.8.2"
+  }
+}
