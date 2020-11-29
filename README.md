@@ -1,15 +1,15 @@
 # Getir Code Challenge
 
-# Create User's Account
+# Fetch Records
 
-Create an Account for the authenticated User if an Account for that User does
-not already exist. Each User can only have one Account.
+Create a RESTful API with a single endpoint that fetches the data in the
+provided MongoDB collection and return the results in the requested format.
 
-**URL** : `/api/accounts/`
+**URL** : `https://getir-code-challenge.herokuapp.com/api/v1/records`
 
 **Method** : `POST`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -19,7 +19,10 @@ Provide name of Account to be created.
 
 ```json
 {
-    "name": "[unicode 64 chars max]"
+    "startDate": "string",
+    "endDate": "string",
+    "minCount": "number",
+    "maxCount": "number"
 }
 ```
 
@@ -27,39 +30,38 @@ Provide name of Account to be created.
 
 ```json
 {
-    "name": "Build something project dot com"
+    "startDate": "2016-01-26",
+    "endDate": "2018-02-02",
+    "minCount": 2700,
+    "maxCount": 3000
 }
 ```
 
 ## Success Response
 
-**Condition** : If everything is OK and an Account didn't exist for this User.
+**Condition** : If everything is OK.
 
-**Code** : `201 CREATED`
+**Code** : `202`
 
 **Content example**
 
 ```json
 {
-    "id": 123,
-    "name": "Build something project dot com",
-    "url": "http://testserver/api/accounts/123/"
+    "code": 0,
+    "msg": "Success",
+    "records": [
+        {
+            "key": "ibfRLaFT",
+            "createdAt": "2016-12-25T16:43:27.909Z",
+            "totalCount": 2892
+        }
+    ]
 }
 ```
 
 ## Error Responses
 
-**Condition** : If Account already exists for User.
-
-**Code** : `303 SEE OTHER`
-
-**Headers** : `Location: http://testserver/api/accounts/123/`
-
-**Content** : `{}`
-
-### Or
-
-**Condition** : If fields are missed.
+**Condition** : If fields are missed or wrong type.
 
 **Code** : `400 BAD REQUEST`
 
@@ -67,9 +69,7 @@ Provide name of Account to be created.
 
 ```json
 {
-    "name": [
-        "This field is required."
-    ]
+    "message": "\"maxCount\" must be a number"
 }
 ```
 
