@@ -15,8 +15,6 @@ provided MongoDB collection and return the results in the requested format.
 
 **Data constraints**
 
-Provide name of Account to be created.
-
 ```json
 {
     "startDate": "string",
